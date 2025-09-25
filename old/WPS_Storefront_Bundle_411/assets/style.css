@@ -1,0 +1,25 @@
+:root{--bg:#0e0f12;--panel:#1a1c22;--text:#e7e7ea;--muted:#a5a7ad;--green:#1e4d2b;--green-soft:#2a6a3b;--accent:#ff3b3b;--pill-radius:9999px;--shadow:0 10px 24px rgba(0,0,0,.35)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif;line-height:1.4}
+a{color:#b9d7ff;text-decoration:none}a:hover{text-decoration:underline}
+.site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,var(--green),var(--green-soft));box-shadow:var(--shadow)}
+.nav{display:flex;align-items:center;gap:16px;max-width:1200px;margin:0 auto;padding:12px 16px}.brand{font-weight:800;color:#fff;letter-spacing:.2px}
+.nav-links{display:flex;align-items:center;gap:12px;margin-left:auto}.nav a{color:#eef6ee;padding:8px 12px;border-radius:10px}.nav a:hover{background:rgba(255,255,255,.08)}
+.container{max-width:1200px;margin:24px auto;padding:0 16px}.hero{background:var(--panel);padding:20px;border-radius:16px;box-shadow:var(--shadow)}
+h1,h2{margin:.2em 0 .4em 0}.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:12px}
+.card{background:linear-gradient(180deg,#16171c,#0f1014);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card .thumb{height:260px;background:#0b0c10;display:flex;align-items:center;justify-content:center}.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .body{padding:12px}.title{font-weight:700}.meta{font-size:12px;color:var(--muted)}.price{color:#9ff59f;font-weight:700;margin:6px 0 8px 0}
+.btns{display:flex;flex-direction:column;gap:8px;margin-top:auto;padding:12px}.pay{border:none;border-radius:14px;padding:10px 12px;font-weight:700;cursor:pointer;text-align:center}
+.pay.paypal{background:#0070e0;color:#fff}.pay.cashapp{background:#00c244;color:#001b05}
+.donate-pill{background:linear-gradient(90deg,#ff4d4d,#ff1a1a);color:#fff;border:none;border-radius:var(--pill-radius);padding:10px 22px;font-size:15px;font-weight:800;letter-spacing:.3px;cursor:pointer;position:relative;box-shadow:0 0 6px #ff4d4d;animation:shimmer 2.2s infinite ease-in-out}
+@keyframes shimmer{0%{box-shadow:0 0 6px #ff4d4d;transform:translateZ(0)}50%{box-shadow:0 0 22px #ff1a1a}100%{box-shadow:0 0 6px #ff4d4d}}
+.tiktok-feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}.tiktok-embed{background:#0b0c10;border-radius:12px;overflow:hidden}
+.site-footer{max-width:1200px;margin:32px auto 40px;padding:0 16px;color:var(--muted)}.badges{display:flex;gap:12px;flex-wrap:wrap}
+.badge{background:#182018;border:1px solid #294029;color:#cfe7cf;padding:6px 10px;border-radius:10px;font-size:12px}.admin-only{opacity:.9}
+
+/* Certifications strip */
+.certs h2{margin-top:0}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.cert{background:linear-gradient(180deg,#16171c,#0f1014);border:1px solid #2b2d33;border-radius:12px;padding:8px;display:flex;align-items:center;justify-content:center}
+.cert img{max-width:100%;height:70px;object-fit:contain}
+.badges a img{opacity:.95;margin-right:8px}

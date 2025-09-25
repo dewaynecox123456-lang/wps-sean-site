@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img"      # where uploaded files go in the repo
+public_folder: "/assets/img"    # how the site references them
+
+local_backend: true
+editorial_workflow: false
+
+collections:
+  - name: "puzzles"
+    label: "Puzzles"
+    format: "json"
+    editor: { preview: false }
+    files:
+      - name: "puzzles"
+        label: "Puzzles List"
+        file: "assets/products.json"
+        fields:
+          - { name: items, label: Items, widget: list, collapsed: true, fields: [
+              { name: title,      label: Title,              widget: string },
+              { name: price,      label: Price (USD),        widget: number, value_type: float, min: 0 },
+              { name: dimensions, label: Dimensions/Notes,   widget: string, required: false },
+              { name: image,      label: Image,              widget: image },
+              { name: paypal,     label: Override PayPal URL, widget: string, required: false },
+              { name: cashapp,    label: Override Cash App URL, widget: string, required: false }
+            ] }
+
+  - name: "art"
+    label: "Art Exhibit"
+    format: "json"
+    editor: { preview: false }
+    files:
+      - name: "art"
+        label: "Art List"
+        file: "assets/art.json"
+        fields:
+          - { name: items, label: Items, widget: list, collapsed: true, fields: [
+              { name: title,      label: Title,              widget: string },
+              { name: price,      label: Price (USD),        widget: number, value_type: float, min: 0, required: false },
+              { name: dimensions, label: Dimensions/Notes,   widget: string, required: false },
+              { name: image,      label: Image,              widget: image }
+            ] }
+
+  - name: "crochet"
+    label: "Crochet"
+    format: "json"
+    editor: { preview: false }
+    files:
+      - name: "crochet"
+        label: "Crochet List"
+        file: "assets/crochet.json"
+        fields:
+          - { name: items, label: Items, widget: list, collapsed: true, fields: [
+              { name: title,      label: Title,              widget: string },
+              { name: price,      label: Price (USD),        widget: number, value_type: float, min: 0, required: false },
+              { name: dimensions, label: Dimensions/Notes,   widget: string, required: false },
+              { name: image,      label: Image,              widget: image }
+            ] }

@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 140'>
+  <defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='#12321e'/><stop offset='100%' stop-color='#0b2015'/></linearGradient>
+  <linearGradient id='rim' x1='0' y1='0' x2='1' y2='0'><stop offset='0%' stop-color='#8dffaa' stop-opacity='.9'/><stop offset='100%' stop-color='#8dffaa' stop-opacity='.4'/></linearGradient></defs>
+  <rect x='6' y='6' width='408' height='128' rx='18' fill='url(#bg)'/><rect x='6' y='6' width='408' height='128' rx='18' fill='none' stroke='url(#rim)' stroke-width='2.5'/>
+  <g transform='translate(22,18)' opacity='.95' fill='#8dffaa'> <path d='M36 20 a14 14 0 1 1 -0.1 0' fill-opacity='.15'/><path d='M22 56 c0-14 28-14 28 0 v14 h-28z' fill-opacity='.15'/><circle cx='30' cy='38' r='2.4'/><circle cx='42' cy='38' r='2.4'/> </g>
+  <text x='120' y='78' fill='#eef6ef' font-family='Inter, system-ui, sans-serif' font-weight='800' font-size='22'>Linux Certified</text></svg>

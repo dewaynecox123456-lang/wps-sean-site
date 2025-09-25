@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tip Wonder Piece Studio</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .tip-wrap{max-width:900px;margin:24px auto;padding:0 16px}
+  .amounts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:16px 0}
+  .amount{background:var(--panel);border:1px solid #2b2d33;border-radius:16px;padding:16px}
+  .amount h3{margin:0 0 10px}
+  .payrow{display:flex;gap:8px;flex-wrap:wrap}
+  .paybtn{flex:1;text-align:center;border:none;border-radius:12px;padding:10px 12px;font-weight:800;cursor:pointer;text-decoration:none}
+  .paybtn.pp{background:#0070e0;color:#fff}.paybtn.ca{background:#00c244;color:#001b05}.paybtn.vm{background:#3d95ce;color:#fff}
+  .custom{display:flex;gap:8px;margin-top:16px}
+  .custom input{flex:1;padding:10px;border-radius:10px;border:1px solid #333;background:#0f1014;color:#fff}
+  .amount.dominant{border-color:#ff6b6b; box-shadow:0 0 0 2px rgba(255,107,107,.25), var(--shadow)}
+</style></head><body>
+<header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="/">Wonder Piece Studio</a>
+      <div class="nav-links">
+        <a href="/">Puzzles</a>
+        <a href="/tiktok.html">TikTok</a>
+        <a href="/art.html">Art Exhibit</a>
+        <a href="/crochet.html">Crochet</a>
+        <a href="/admin/" class="admin-only">Admin</a>
+        <a href="/tip.html" class="donate-pill">Tip</a>
+      </div>
+    </nav>
+    </header>
+<main class="tip-wrap">
+  <h1>Leave a Tip ❤️</h1>
+  <p>Most supporters choose <strong>$1</strong>. Every bit helps—thank you!</p>
+  <div class="amounts" id="amounts"></div>
+  <div class="custom">
+    <input id="customAmt" type="number" step="1" min="1" placeholder="Custom amount (USD)">
+    <a id="goCash" class="paybtn ca">Cash App</a>
+    <a id="goPayPal" class="paybtn pp">PayPal</a>
+    <a id="goVenmo" class="paybtn vm">Venmo</a>
+  </div>
+</main>
+<section class="certs container"><h2>Certifications</h2><div id="cert-grid" class="cert-grid"></div></section>
+
+<footer class="site-footer">
+  <div class="badges">
+    <a href="https://app.netlify.com/projects/wpshop/deploys" target="_blank" rel="noopener">
+      <img src="https://api.netlify.com/api/v1/badges/8d94dfb3-15fd-458f-abaa-7c61ffaf9638/deploy-status" alt="Netlify Status">
+    </a>
+    <span class="badge">Powered by Linux</span>
+    <span class="badge" id="buildVersion">Build</span>
+  </div>
+</footer>
+
+<a class="tip-fab" href="/tip.html">Tip ❤️</a>
+<script>
+async function loadJSON(p){ const r=await fetch(p); return r.json(); }
+const A = document.getElementById('amounts');
+function cashAppUrl(tag,a){ return `https://cash.app/$${tag}/${a}`; }
+function paypalUrl(me,a){  return `https://www.paypal.com/paypalme/${me}/${a}`; }
+function venmoUrl(user,a,note){ return `https://venmo.com/u/${user}?txn=pay&amount=${a}&note=${encodeURIComponent(note)}`; }
+function card(a,cfg,dom){ const b=document.createElement('div'); b.className='amount'+(dom?' dominant':''); b.innerHTML=`<h3>$${a}</h3>`; const r=document.createElement('div'); r.className='payrow';
+  const mk=(h,cl,t)=>{ const e=document.createElement('a'); e.href=h; e.target='_blank'; e.rel='noopener'; e.className='paybtn '+cl; e.textContent=t; return e; };
+  r.append(mk(cashAppUrl(cfg.tips.cash_tag,a),'ca','Cash App'), mk(paypalUrl(cfg.tips.paypal_me,a),'pp','PayPal'), mk(venmoUrl(cfg.tips.venmo_user,a,cfg.tips.note),'vm','Venmo'));
+  b.appendChild(r); return b; }
+(async()=>{ const cfg=await loadJSON('assets/config.json'); const tip=cfg.payments && cfg.payments.dewayne ? cfg.payments.dewayne : {};
+  if (tip.tip_cashapp) cfg.tips.cash_tag = tip.tip_cashapp.replace(/^.*\$/,''); 
+  if (tip.tip_paypal) cfg.tips.paypal_me = tip.tip_paypal.replace(/.*paypalme\//,''); 
+  if (tip.tip_venmo) cfg.tips.venmo_user = tip.tip_venmo.replace(/.*\/u\//,''); 
+  const amounts=(cfg.tips?.amounts||[1,3,5,10]).slice().sort((a,b)=>a-b); const order=[1,...amounts.filter(v=>v!==1)]; order.forEach(v=>A.appendChild(card(v,cfg,v===1)));
+  const amt=document.getElementById('customAmt'); document.getElementById('goCash').onclick=()=>{ if(amt.value) window.open(cashAppUrl(cfg.tips.cash_tag,amt.value),'_blank','noopener'); };
+  document.getElementById('goPayPal').onclick=()=>{ if(amt.value) window.open(paypalUrl(cfg.tips.paypal_me,amt.value),'_blank','noopener'); };
+  document.getElementById('goVenmo').onclick=()=>{ if(amt.value) window.open(venmoUrl(cfg.tips.venmo_user,amt.value,cfg.tips.note),'_blank','noopener'); };
+})();
+</script>
+<script src="assets/app.js"></script>
+</body></html>

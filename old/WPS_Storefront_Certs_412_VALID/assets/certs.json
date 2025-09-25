@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "title": "Microsoft Certified Professional (MCP)",
+      "image": "assets/img/certs/mcp-shield.png",
+      "link": ""
+    },
+    {
+      "title": "CompTIA A+ Certified",
+      "image": "assets/img/certs/aplus-shield.png",
+      "link": ""
+    },
+    {
+      "title": "Linux Certified",
+      "image": "assets/img/certs/linux-shield.png",
+      "link": ""
+    },
+    {
+      "title": "IBM BigFix Certified",
+      "image": "assets/img/certs/bigfix-shield.png",
+      "link": ""
+    }
+  ]
+}

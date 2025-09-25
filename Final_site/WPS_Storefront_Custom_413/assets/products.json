@@ -1,0 +1,10 @@
+{
+  "items": [
+    {
+      "title": "Sample Puzzle",
+      "price": 12.0,
+      "dimensions": "8x10 print \u2022 300 dpi",
+      "image": "assets/img/products/placeholder.svg"
+    }
+  ]
+}

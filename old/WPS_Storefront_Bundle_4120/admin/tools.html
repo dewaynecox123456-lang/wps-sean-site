@@ -1,0 +1,89 @@
+<!--
+Copyright (c) 2025 Dewayne Cox (Wonder Piece Studio). All rights reserved.
+Unauthorized copying, distribution, or modification without written consent is prohibited.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Tools — Image Resizer (Local)</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Admin Tools — Image Resizer</h1>
+    <p>Runs in your browser; images never upload anywhere. Requires Admin login.</p>
+    <div class="panel grid">
+      <div><label>Preset</label><select id="preset"><option value="puzzle">Puzzle (1200px, JPG 85%)</option><option value="art">Art (1920px, JPG 90%)</option><option value="crochet">Crochet (1200px, JPG 85%)</option><option value="thumb">Thumbnail (600px, JPG 82%)</option><option value="custom">Custom</option></select></div>
+      <div><label>Max Width</label><input id="maxW" type="number" value="1200" min="100"></div>
+      <div><label>Max Height</label><input id="maxH" type="number" value="1200" min="100"></div>
+      <div><label>Quality</label><input id="quality" type="number" value="0.85" min="0.1" max="1" step="0.01"></div>
+      <div><label>Prefix</label><input id="prefix" type="text" placeholder="art_"></div>
+      <div><label>Folder hint</label><select id="folder"><option value="assets/img/products/">assets/img/products/</option><option value="assets/img/art/">assets/img/art/</option><option value="assets/img/crochet/">assets/img/crochet/</option><option value="assets/img/uploads/">assets/img/uploads/</option></select></div>
+      <div style="display:flex;gap:8px;align-items:flex-end"><button id="downloadAll">Download All</button><button id="clearAll">Clear</button></div>
+    </div>
+    <div id="drop" class="panel drop"><strong>Drop images here</strong> or click to select<input id="fileInput" type="file" accept="image/*" multiple style="display:none"></div>
+    <div id="thumbs" class="thumbs"></div>
+  </main>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    // Require Netlify Identity login
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user) window.netlifyIdentity.open('login');
+      });
+    }
+
+    const preset = document.getElementById('preset');
+    const maxW = document.getElementById('maxW');
+    const maxH = document.getElementById('maxH');
+    const quality = document.getElementById('quality');
+    const prefix = document.getElementById('prefix');
+    const folder = document.getElementById('folder');
+    const drop = document.getElementById('drop');
+    const fileInput = document.getElementById('fileInput');
+    const thumbs = document.getElementById('thumbs');
+    const downloadAll = document.getElementById('downloadAll');
+    const clearAll = document.getElementById('clearAll');
+
+    const presets = { puzzle:{w:1200,h:1200,q:0.85,pre:'puzzle_'},
+                      art:{w:1920,h:1920,q:0.90,pre:'art_'},
+                      crochet:{w:1200,h:1200,q:0.85,pre:'crochet_'},
+                      thumb:{w:600,h:600,q:0.82,pre:'thumb_'} };
+    preset.addEventListener('change', () => {
+      if(preset.value!=='custom'){ const p=presets[preset.value]; maxW.value=p.w; maxH.value=p.h; quality.value=p.q; if(!prefix.value) prefix.value=p.pre; }
+    });
+
+    function onSelectFiles(files){ Array.from(files||[]).forEach(processFile); }
+    drop.addEventListener('click', ()=>fileInput.click());
+    fileInput.addEventListener('change', e=>onSelectFiles(e.target.files));
+    drop.addEventListener('dragover', e=>{e.preventDefault();});
+    drop.addEventListener('drop', e=>{e.preventDefault(); onSelectFiles(e.dataTransfer.files);});
+
+    let processed=[];
+    async function processFile(file){
+      const img=new Image();
+      img.onload=()=>{
+        const w=parseInt(maxW.value||1200,10), h=parseInt(maxH.value||1200,10), q=Math.min(Math.max(parseFloat(quality.value||0.85),0.1),1);
+        const scale=Math.min(w/img.width, h/img.height, 1);
+        const outW=Math.round(img.width*scale), outH=Math.round(img.height*scale);
+        const can=document.createElement('canvas'); can.width=outW; can.height=outH;
+        const ctx=can.getContext('2d'); ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high'; ctx.drawImage(img,0,0,outW,outH);
+        const dataUrl=can.toDataURL('image/jpeg', q);
+        const base=file.name.replace(/\.[^.]+$/, ''); const outName=(prefix.value||'')+base+'.jpg';
+        processed.push({name:outName, dataUrl});
+        const card=document.createElement('div'); const pic=new Image(); pic.src=dataUrl; card.appendChild(pic);
+        const meta=document.createElement('div'); meta.textContent=`${outName} — ${outW}×${outH} — save to: ${folder.value}`; card.appendChild(meta);
+        const btn=document.createElement('button'); btn.textContent='Download'; btn.onclick=()=>download(dataUrl,outName); card.appendChild(btn);
+        thumbs.appendChild(card);
+      };
+      img.src=URL.createObjectURL(file);
+    }
+    function download(dataUrl, name){ const a=document.createElement('a'); a.href=dataUrl; a.download=name; document.body.appendChild(a); a.click(); a.remove(); }
+    downloadAll.onclick=()=>processed.forEach((p,i)=>setTimeout(()=>download(p.dataUrl,p.name), i*150));
+    clearAll.onclick=()=>{processed=[]; thumbs.innerHTML='';};
+  </script>
+</body>
+</html>

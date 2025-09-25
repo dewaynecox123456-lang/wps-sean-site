@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tip</title><link rel="stylesheet" href="assets/style.css"></head><body>
+
+<nav class="nav">
+  <a class="brand" href="/">Wonder Piece Studio</a>
+  <div class="nav-links">
+    <a href="/">Puzzles</a>
+    <a href="/tiktok.html">TikTok</a>
+    <a href="/art.html">Art Exhibit</a>
+    <a href="/crochet.html">Crochet</a>
+    <a href="/admin/">Admin</a>
+    <a href="/tip.html">Tip</a>
+  </div>
+</nav><div class="watermark">© 2025 Wonder Piece Studio — All Rights Reserved</div>
+<main class="container"><h1>Leave a Tip ❤️</h1><div id="amounts" class="tip-card"></div></main>
+
+<footer class="site-footer">
+  <div class="badges">
+    <a href="https://app.netlify.com/projects/wpshop/deploys" target="_blank" rel="noopener">
+      <img src="https://api.netlify.com/api/v1/badges/8d94dfb3-15fd-458f-abaa-7c61ffaf9638/deploy-status" alt="Netlify Status">
+    </a>
+    <span class="badge">Powered by Linux</span>
+    <span class="badge">© <span id="cpyYear"></span> Dewayne Cox — Wonder Piece Studio</span>
+    <span class="badge">Build 0.5.1</span>
+  </div>
+</footer>
+<a class="tip-fab" href="/tip.html">Tip ❤️</a>
+<script>
+async function loadJSON(p){const r=await fetch(p);return r.json();}
+function mk(a,cfg){const d=document.createElement('div'); d.innerHTML=`<div class='btns'>
+<a class='pay cashapp' target='_blank' rel='noopener' href='https://cash.app/${cfg.tips.cash_tag}/${a}'>Cash App ($${a})</a>
+<a class='pay paypal'  target='_blank' rel='noopener' href='https://www.paypal.com/paypalme/${cfg.tips.paypal_me}/${a}'>PayPal ($${a})</a>
+<a class='pay' style='background:#3d95ce;color:#fff' target='_blank' rel='noopener' href='https://venmo.com/u/${cfg.tips.venmo_user}'>Venmo (enter $${a})</a>
+</div>`; return d.firstElementChild;}
+(async()=>{ const cfg=await loadJSON('assets/config.json'); const A=document.getElementById('amounts'); 
+  const h=document.createElement('h3'); h.textContent='Most supporters choose $1'; A.appendChild(h);
+  [1,3,5,10].forEach(v=>A.appendChild(mk(v,cfg)));
+  const customWrap=document.createElement('div'); customWrap.className='btns';
+  const input=document.createElement('input'); input.type='number'; input.min='1'; input.placeholder='Custom amount ($)'; input.style.cssText='width:88%;margin:.28rem auto;padding:.58rem .8rem;border-radius:9px;border:1px solid #2a2e38;background:#0f1217;color:#e7e7ea;display:block;';
+  const go=document.createElement('a'); go.className='pay cashapp'; go.textContent='Tip Custom via Cash App'; go.href='#'; go.addEventListener('click', e=>{ e.preventDefault(); const v=parseFloat(input.value||'0'); if(!v||v<1) return; window.open(`https://cash.app/${cfg.tips.cash_tag}/${v}`,'_blank'); });
+  customWrap.appendChild(input); customWrap.appendChild(go); A.appendChild(customWrap);
+})();
+</script>
+<script src="assets/app.js"></script></body></html>

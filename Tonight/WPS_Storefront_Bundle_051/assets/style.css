@@ -1,0 +1,51 @@
+
+:root{--bg:#0e0f12;--panel:#1a1c22;--text:#e7e7ea;--muted:#a5a7ad;--green:#1e4d2b;--green-soft:#2a6a3b;--accent:#ff3b3b;--pill:9999px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Inter,Segoe UI,Roboto,Ubuntu,sans-serif}
+:root{--scene-grad: radial-gradient(1200px 600px at 70% -10%, rgba(58,92,76,.35), transparent 60%), radial-gradient(900px 500px at 10% 110%, rgba(18,46,34,.45), transparent 60%), linear-gradient(180deg, #0b1313 0%, #0a1012 45%, #090c10 100%)}
+body{ background: var(--scene-grad); background-attachment: fixed }
+body.has-scene{ background: var(--scene-grad), url("assets/img/bg/lake-night.jpg") center/cover fixed no-repeat; background-blend-mode: overlay, normal }
+body::before{ content:""; position:fixed; inset:0; pointer-events:none; z-index:0; background: radial-gradient(120% 120% at 50% 20%, rgba(0,0,0,0) 55%, rgba(0,0,0,.38) 100%) }
+.watermark{position:fixed; right:10px; bottom:8px; z-index:2; color:rgba(220,230,225,.25); font-size:11px; user-select:none}
+.nav{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;gap:16px;align-items:center;background:linear-gradient(180deg,var(--green),var(--green-soft)); position:relative}
+.nav .brand{font-weight:800;color:#fff;text-decoration:none}.nav a{color:#eef6ee;text-decoration:none}
+.nav .nav-links{margin-left:auto;display:flex;gap:12px}
+.nav::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.2; background-image: radial-gradient(#fff,transparent 1px); background-size:3px 3px; mix-blend-mode: soft-light}
+.container{max-width:1200px;margin:24px auto;padding:0 16px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{background:rgba(16,18,22,.78);backdrop-filter:blur(6px);border-radius:12px;overflow:hidden;border:1px solid rgba(72,120,92,.25);transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.38);border-color:#345238}
+.thumb{height:220px;display:flex;align-items:center;justify-content:center;background:#0b0c10}
+.thumb img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+.body{padding:12px}.title{font-weight:800}.meta{font-size:12px;color:#a5a7ad}.price{color:#9ff59f;font-weight:800;margin:8px 0}
+.btns{display:flex;flex-direction:column;gap:8px;padding:12px}
+.pay{display:block;text-align:center;border:none;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer;position:relative;overflow:hidden;outline:none}
+.pay::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.0) 40%,rgba(255,255,255,.18) 45%,rgba(255,255,255,0) 60%);transform:translateX(-120%);transition:transform .7s ease}
+.pay:hover::after{transform:translateX(120%)}
+.pay:focus-visible{box-shadow:0 0 0 3px rgba(147,197,114,.45), 0 0 0 5px rgba(0,0,0,.3)}
+.pay.paypal{background:#0070e0;color:#fff}.pay.cashapp{background:#00c244;color:#001b05}
+.tip-fab{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,#ff4d4d,#ff1a1a);color:#fff;border:none;border-radius:var(--pill);padding:12px 18px;font-weight:900;box-shadow:0 8px 26px rgba(255,50,50,.35);z-index:60;overflow:visible;letter-spacing:.2px;transform:translateZ(0);animation:tipPulse 2.8s ease-in-out infinite}
+@keyframes tipPulse{0%,100%{box-shadow:0 10px 28px rgba(255,60,60,.34)}50%{box-shadow:0 16px 44px rgba(255,60,60,.48)}}
+.tip-fab .firefly{position:absolute;width:8px;height:8px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,#fffba0 40%,rgba(255,255,255,0) 70%);filter:drop-shadow(0 0 8px #ffe98f);animation:fly 5s linear forwards}
+@keyframes fly{0%{transform:translate(0,0) scale(.6);opacity:0}25%{opacity:1}50%{transform:translate(calc(var(--x)*1.2), calc(var(--y)*1.0)) scale(1)}100%{transform:translate(calc(var(--x)*2.0), calc(var(--y)*1.6)) scale(.6);opacity:0}}
+.container h1,.container h2{position:relative;padding-bottom:6px;margin-bottom:14px}
+.container h1::after,.container h2::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:64px;background:linear-gradient(90deg,#9fe5c0,#3a7b5f);border-radius:999px;box-shadow:0 2px 12px rgba(88,196,150,.45)}
+.site-footer{max-width:1200px;margin:32px auto 40px;padding:0 16px;color:#a5a7ad}
+.badges{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.badge{background:#182018;border:1px solid #294029;color:#cfe7cf;padding:6px 10px;border-radius:10px;font-size:12px}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.cert{background:linear-gradient(180deg,#14161b,#0f1116);border-radius:14px;border:1px solid #2a2e38;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;perspective:600px;padding:10px;display:flex;justify-content:center}
+.cert:hover{transform:translateY(-3px) rotateX(2deg) rotateY(-2deg);box-shadow:0 10px 28px rgba(30,120,60,.35);border-color:#335d3f}
+.cert img{max-width:100%;height:90px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));transition:filter .2s ease}
+.cert:hover img{filter:drop-shadow(0 10px 22px rgba(0,0,0,.45))}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:100}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:88vh;border-radius:10px;box-shadow:0 14px 60px rgba(0,0,0,.6)}
+.lb:after{content:'×';position:absolute;top:10px;right:16px;color:#fff;font-size:34px;cursor:pointer}
+.tip-card{ max-width: 420px; padding: .9rem; margin: 1rem auto; border-radius: 12px; background: rgba(16,18,22,.78); border: 1px solid rgba(72,120,92,.25); box-shadow: 0 2px 8px rgba(0,0,0,.6); }
+.tip-card h3{ font-size: 1rem; margin:.2rem 0 .6rem; text-align:center }
+.tip-card .btns .pay{ width:88%; margin:0.28rem auto; padding:.58rem .8rem; font-size:.95rem; border-radius:9px }
+/* pager */
+.pager{display:flex;gap:8px;justify-content:center;align-items:center;margin:12px 0}
+.pager button{background:#1f232b;color:#e7e7ea;border:1px solid #2a2e38;border-radius:10px;padding:8px 12px;font-weight:700;cursor:pointer}
+.pager button[disabled]{opacity:.5;cursor:not-allowed}
+.pager .page-info{color:#a5a7ad;font-size:12px;padding:0 6px}
