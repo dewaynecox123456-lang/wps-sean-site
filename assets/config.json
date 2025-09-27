@@ -1,15 +1,38 @@
 {
   "site_name": "Wonder Piece Studio",
-  "version": "0.4.21",
-  "payments": {
-    "dewayne": {
-      "tip_cashapp": "https://cash.app/$kittyslayer227",
-      "tip_venmo": "https://venmo.com/u/Cheri-Cox-10",
-      "tip_paypal": "https://www.paypal.com/paypalme/FewayneCox"
-    },
+  "version": "0.5.1",
+  "commission": {
+    "default_percent": 0,
+    "note": "Percent the studio retains when 'pay_here' flow is used"
+  },
+  "artists": {
     "sean": {
-      "paypal_default": "https://www.paypal.com/ncp/payment/4KCEYV3VHLVLG",
-      "cashapp_default": "https://cash.app/$seanpwatkins"
+      "display_name": "Sean Watkins",
+      "payouts": {
+        "paypal": "https://www.paypal.com/ncp/payment/4KCEYV3VHLVG",
+        "cashapp": "https://cash.app/$seanpwatkins",
+        "venmo": "https://venmo.com/u/Sean-Watkins-49"
+      }
+    },
+    "dewayne": {
+      "display_name": "Dewayne Cox",
+      "payouts": {
+        "paypal": "https://www.paypal.com/paypalme/FewayneCox",
+        "cashapp": "https://cash.app/$kittyslayer227",
+        "venmo": "https://venmo.com/u/Cheri-Cox-10"
+      }
+    }
+  },
+  "contacts": {
+    "founder": {
+      "name": "Sean Watkins",
+      "email": "seanpwatkins@gmail.com",
+      "role": "Founder \u2022 Puzzles & Crochet"
+    },
+    "it": {
+      "name": "Dewayne Cox",
+      "email": "dewaynecox123456@gmail.com",
+      "role": "IT & Site Maintainer"
     }
   },
   "tips": {
@@ -19,9 +42,6 @@
       5,
       10
     ],
-    "cash_tag": "$kittyslayer227",
-    "paypal_me": "FewayneCox",
-    "venmo_user": "Cheri-Cox-10",
     "note": "Wonder Piece Studio tip \u2014 thank you!"
   }
 }

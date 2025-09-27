@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact • Wonder Piece Studio</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="container">
+  <h1>Contact Us</h1>
+  <p>Have a question, want a custom puzzle, or need help? Reach out below.</p>
+
+  <section class="card" style="padding:1rem; margin-bottom:1rem;">
+    <h2>Team</h2>
+    <p><strong>Sean Watkins</strong> — Founder • Puzzles & Crochet<br>
+       <a href="mailto:seanpwatkins@gmail.com">seanpwatkins@gmail.com</a></p>
+    <p><strong>Dewayne Cox</strong> — IT & Site Maintainer<br>
+       <a href="mailto:dewaynecox123456@gmail.com">dewaynecox123456@gmail.com</a></p>
+  </section>
+
+  <!-- Netlify Form -->
+  <form name="contact" method="POST" data-netlify="true" class="card" style="padding:1rem;">
+    <input type="hidden" name="form-name" value="contact">
+    <label>Name<br><input type="text" name="name" required></label><br>
+    <label>Email<br><input type="email" name="email" required></label><br>
+    <label>Message<br><textarea name="message" rows="6" required></textarea></label><br>
+    <button type="submit" class="btn">Send</button>
+  </form>
+
+  <p style="margin-top:1rem;">Prefer email? <a href="mailto:seanpwatkins@gmail.com">Email Sean</a> or <a href="mailto:dewaynecox123456@gmail.com">Email Dewayne</a>.</p>
+
+  <footer class="site-footer">
+    <div class="badges">
+      <a href="https://app.netlify.com/sites/wps-sean-website/deploys" target="_blank" rel="noopener">
+        <img src="https://api.netlify.com/api/v1/badges/10814e79-6c83-4e6e-95c6-224b6e7b141b/deploy-status" alt="Netlify Status">
+      </a>
+      <span class="badge">Powered by Linux</span>
+      <span class="badge">© Wonder Piece Studio</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+[
+  { "title": "Blue Crab",         "size": "8x10 • 300 dpi", "price": 12, "image": "assets/img/products/blue_crab_puzzle.jpg" },
+  { "title": "Fireflies & Sweet Tea","size": "8x10 • 300 dpi", "price": 12, "image": "assets/img/products/fireflies_sweet_tea.jpg" },
+  { "title": "Heron Red Bridge",  "size": "8x10 • 300 dpi", "price": 12, "image": "assets/img/products/heron_red_bridge.jpg" },
+  { "title": "Sweet Tea – Fair City","size": "8x10 • 300 dpi", "price": 12, "image": "assets/img/products/Sweet_tea_fair_city.jpg" },
+  { "title": "Sweet Tea Laundry", "size": "8x10 • 300 dpi", "price": 12, "image": "assets/img/products/sweet_tea_laundry.jpg" },
+  { "title": "Swing Scene",       "size": "8x10 • 300 dpi", "price": 12, "image": "assets/img/products/swing_scene.jpg" },
+  { "title": "Porch Egret Night", "size": "8x10 • 300 dpi", "price": 12, "image": "assets/img/products/porch_egret_night.jpg" },
+  { "title": "Roddy Raccoon",     "size": "8x10 • 300 dpi", "price": 12, "image": "assets/img/products/roddy_raccoon_puzzle.jpg" }
+]

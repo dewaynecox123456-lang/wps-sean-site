@@ -1,10 +1,74 @@
 {
   "items": [
     {
+      "id": "bayou-moon-ritual",
+      "owner": "dewayne",
+      "title": "Bayou Moon Ritual",
+      "price": 250,
+      "frame": "11x14 walnut",
+      "notes": "Buyer pays shipping",
+      "image": "assets/img/art/Bayou_moon_Ritual.jpg",
+      "accepts": [
+        "paypal",
+        "cashapp",
+        "venmo"
+      ]
+    },
+    {
+      "id": "bayou-sacunce",
+      "owner": "dewayne",
+      "title": "Bayou Sacunce",
+      "price": 200,
+      "frame": "11x14 walnut",
+      "notes": "Buyer pays shipping",
+      "image": "assets/img/art/Bayou_sacunce.jpg",
+      "accepts": [
+        "paypal",
+        "cashapp",
+        "venmo"
+      ]
+    },
+    {
+      "id": "bayou-sacunce-2",
+      "owner": "dewayne",
+      "title": "Bayou Sacunce 2",
+      "price": 200,
+      "frame": "11x14 walnut",
+      "notes": "Buyer pays shipping",
+      "image": "assets/img/art/Bayou_sacunce2.jpg",
+      "accepts": [
+        "paypal",
+        "cashapp",
+        "venmo"
+      ]
+    },
+    {
+      "id": "egret-painting",
+      "owner": "dewayne",
+      "title": "Egret Painting",
+      "price": 220,
+      "frame": "11x14 walnut",
+      "notes": "Buyer pays shipping",
+      "image": "assets/img/art/egret_painting.jpg",
+      "accepts": [
+        "paypal",
+        "cashapp",
+        "venmo"
+      ]
+    },
+    {
+      "id": "st-charles-jazz",
+      "owner": "dewayne",
       "title": "St. Charles Jazz",
-      "price": 350,
-      "dimensions": "16x20 \u2022 Acrylic on canvas",
-      "image": "assets/img/art/st_charles_jazz.jpg"
+      "price": 240,
+      "frame": "11x14 walnut",
+      "notes": "Buyer pays shipping",
+      "image": "assets/img/art/st_charles_jazz.jpg",
+      "accepts": [
+        "paypal",
+        "cashapp",
+        "venmo"
+      ]
     }
   ]
 }
