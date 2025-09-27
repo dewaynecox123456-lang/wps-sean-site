@@ -1,48 +1,26 @@
-
-:root{--bg:#0c0e12;--panel:#151922;--text:#e9edf2;--muted:#a9b0bb;--green:#19552d;--green2:#2a6a3b;--blue:#1e73e6;--pill:9999px;--red:#ff3b3b}
-*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(1200px 900px at 10% 5%, #0f141a 0%, #0b0d11 35%, #0a0c10 100%);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Ubuntu,sans-serif;line-height:1.45}
-.nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,var(--green),var(--green2));box-shadow:0 6px 14px rgba(0,0,0,.35)}
-.nav .wrap{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;gap:16px;align-items:center}
-.nav a{color:#eef6ee;text-decoration:none}.nav .brand{font-weight:900;letter-spacing:.3px}
-.nav .links{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap}.nav .links a{padding:6px 10px;border-radius:10px}.nav .links a:hover{background:rgba(255,255,255,.08)}
-.container{max-width:1200px;margin:24px auto;padding:0 16px}
-.hero{background:linear-gradient(180deg,#121722,#0f141c);border:1px solid #232838;border-radius:16px;padding:22px 20px;margin-bottom:18px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
-.hero h1{margin:0 0 6px 0}.hero p{color:var(--muted);margin:0}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.card{background:linear-gradient(180deg,#12161f,#0f1218);border:1px solid #262a33;border-radius:14px;overflow:hidden;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;box-shadow:0 8px 20px rgba(0,0,0,.28)}
-.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.42);border-color:#334b37}.thumb{height:220px;background:#0b0f14;display:flex;align-items:center;justify-content:center}
-.thumb img{width:100%;height:100%;object-fit:cover}.body{padding:12px}.title{font-weight:800}.meta{font-size:12px;color:#9aa2ae}.price{color:#9ff59f;font-weight:900;margin:8px 0 2px}
-.btns{display:flex;flex-direction:column;gap:8px;padding:12px}.pay{display:block;text-align:center;border:none;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer;position:relative;overflow:hidden;outline:none}
-.pay::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.0) 40%,rgba(255,255,255,.18) 45%,rgba(255,255,255,0) 60%);transform:translateX(-120%);transition:transform .7s ease}
-.pay:hover::after{transform:translateX(120%)}.pay.paypal{background:#0070e0;color:#fff}.pay.cashapp{background:#00c244;color:#001b05}
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.cert{background:linear-gradient(180deg,#14161b,#0f1116);border:1px solid #2a2e38;border-radius:14px;padding:10px;display:flex;justify-content:center;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
-.cert:hover{transform:translateY(-3px) rotateX(2deg) rotateY(-2deg);box-shadow:0 10px 28px rgba(30,120,60,.35);border-color:#335d3f}
-.cert img{max-width:100%;height:90px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
-.site-footer{max-width:1200px;margin:32px auto 40px;padding:0 16px;color:var(--muted)}.badges{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.badge{background:#182018;border:1px solid #294029;color:#cfe7cf;padding:6px 10px;border-radius:10px;font-size:12px}
-.tip-fab{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,#ff4d4d,#ff1a1a);color:#fff;border:none;border-radius:9999px;padding:12px 18px;font-weight:900;box-shadow:0 8px 26px rgba(255,50,50,.35);z-index:60;overflow:visible;letter-spacing:.2px;animation:tipPulse 2.8s ease-in-out infinite}
-@keyframes tipPulse{0%,100%{box-shadow:0 10px 28px rgba(255,60,60,.34)}50%{box-shadow:0 16px 44px rgba(255,60,60,.48)}}
-.tip-fab .fly{position:absolute;width:8px;height:8px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,#fffba0 40%,rgba(255,255,255,0) 70%);filter:drop-shadow(0 0 6px #fff39a);animation:fly 5s linear forwards}
-@keyframes fly{0%{transform:translate(0,0) scale(.5);opacity:0}20%{opacity:1}50%{transform:translate(var(--x),var(--y)) scale(1)}80%{opacity:1}100%{transform:translate(calc(var(--x)*1.5),calc(var(--y)*1.5)) scale(.5);opacity:0}}
-.tip-grid{display:grid;gap:16px;max-width:520px;margin:0 auto}
-.tip-card{background:#12161f;border:1px solid #2b2f3a;border-radius:14px;padding:12px 12px 14px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
-.tip-card h3{margin:6px 0 10px;text-align:center}.tip-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.tip-btn{display:inline-block;padding:.6rem .9rem;border-radius:10px;font-weight:800;text-decoration:none}
-.tip-btn.cash{background:#00c244;color:#001b05}.tip-btn.paypal{background:#0070e0;color:#fff}.tip-btn.venmo{background:#3d95ce;color:#fff}
-.tip-note{text-align:center;color:var(--muted);font-size:.95rem;margin-bottom:6px}
-.container h1,.container h2{position:relative;padding-bottom:6px;margin-bottom:14px}
-.container h1::after,.container h2::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:64px;background:linear-gradient(90deg,#79d492,#2a6a3b);border-radius:999px;box-shadow:0 2px 10px rgba(121,212,146,.35)}
-a:focus-visible,button:focus-visible{outline:2px solid #93c572;outline-offset:2px}
-@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
-/* Footer badge layout */
-.site-footer .badges {
-  display: flex;
-  gap: 10px;         /* space between items */
-  align-items: center;
-  flex-wrap: wrap;   /* so it wraps nicely on small screens */
-}
-
-.site-footer .badges img {
-  height: 20px;      /* keep Netlify badge aligned with text badges */
-}
+/* GNOME + macOS glass with Hunter Green accents */
+:root{--hunter:#1e7a2f;--hunter-2:#2c8b3d;--bg:#0e1116;--surface:#12161d;--text:#e9eef4;
+--muted:#a8b2bf;--card:rgba(18,22,29,.55);--glass:rgba(255,255,255,.06);--border:rgba(255,255,255,.12)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 800px at 20% 0%,#101622 0%,#0b0f16 60%) fixed;color:var(--text);
+font:15px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial}
+nav.nav{position:sticky;top:0;z-index:10;background:linear-gradient(0deg,var(--hunter) 0%,var(--hunter-2) 100%);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+nav .wrap{max-width:1120px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:18px}
+nav .brand{display:inline-block;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.08);color:#fff;font-weight:800;text-decoration:none}
+nav .links a{color:#fff;text-decoration:none;margin:0 10px;font-weight:600;opacity:.9}nav .links a:hover{opacity:1;text-decoration:underline}
+.container{max-width:1120px;margin:28px auto;padding:0 16px}
+.hero{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin-bottom:18px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.card img{width:100%;height:200px;object-fit:cover;display:block;background:#0b0f16}
+.card .card-body{padding:14px 14px 16px}.card h3{margin:0 0 6px 0;font-size:18px}
+.card .meta{color:var(--muted);font-size:13px;margin-bottom:10px}.card .price{font-weight:800;margin-bottom:12px}
+.pay-btn{display:block;text-align:center;padding:10px 12px;border-radius:10px;font-weight:800;text-decoration:none;color:#fff;margin-top:10px}
+.pay-btn.paypal{background:#0070ba}.pay-btn.cash{background:#02c076}.pay-btn.venmo{background:#3d95ce}
+.site-footer .badges{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:6px 10px;font-size:12px;font-weight:700;color:#cfe7cf;background:#182018;border:1px solid #294029;border-radius:999px}
+.site-footer .badges img{height:20px}
+.tip-fab{position:fixed;right:18px;bottom:18px;z-index:20}
+.tip-fab .tip-btn{appearance:none;border:0;cursor:pointer;padding:14px 18px;border-radius:14px;color:#fff;font-weight:900;letter-spacing:.02em;
+background:linear-gradient(135deg,#1fae4b,#2bc36c 55%,#27d978);box-shadow:0 12px 26px rgba(0,0,0,.35),inset 0 0 0 2px rgba(255,255,255,.18)}
+.ship-note{display:inline-block;margin-top:8px;font-size:12px;color:#c7d7c7;background:rgba(33,70,41,.45);border:1px solid rgba(110,170,120,.35);border-radius:8px;padding:4px 8px}

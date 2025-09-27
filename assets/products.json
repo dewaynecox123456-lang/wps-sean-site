@@ -1,116 +1,68 @@
 {
   "items": [
     {
-      "id": "blue-crab-puzzle",
-      "owner": "sean",
       "title": "Blue Crab Puzzle",
       "price": 12,
       "dimensions": "8x10 print \u00b7 300 dpi",
       "image": "assets/img/products/blue_crab_puzzle.jpg",
-      "accepts": [
-        "paypal",
-        "cashapp",
-        "venmo"
-      ],
-      "category": "puzzle"
+      "owner": "sean",
+      "type": "puzzle"
     },
     {
-      "id": "fireflies-sweet-tea",
-      "owner": "sean",
-      "title": "Fireflies & Sweet Tea",
+      "title": "Fireflies Sweet Tea",
       "price": 12,
       "dimensions": "8x10 print \u00b7 300 dpi",
       "image": "assets/img/products/fireflies_sweet_tea.jpg",
-      "accepts": [
-        "paypal",
-        "cashapp",
-        "venmo"
-      ],
-      "category": "puzzle"
+      "owner": "sean",
+      "type": "puzzle"
     },
     {
-      "id": "heron-red-bridge",
-      "owner": "sean",
-      "title": "Heron, Red Bridge",
+      "title": "Heron Red Bridge",
       "price": 12,
       "dimensions": "8x10 print \u00b7 300 dpi",
       "image": "assets/img/products/heron_red_bridge.jpg",
-      "accepts": [
-        "paypal",
-        "cashapp",
-        "venmo"
-      ],
-      "category": "puzzle"
+      "owner": "sean",
+      "type": "puzzle"
     },
     {
-      "id": "porch-egret-night",
-      "owner": "sean",
-      "title": "Porch Egret Night",
-      "price": 12,
-      "dimensions": "8x10 print \u00b7 300 dpi",
-      "image": "assets/img/products/porch_egret_night.jpg",
-      "accepts": [
-        "paypal",
-        "cashapp",
-        "venmo"
-      ],
-      "category": "puzzle"
-    },
-    {
-      "id": "roddy-raccoon",
-      "owner": "sean",
-      "title": "Roddy Raccoon Puzzle",
-      "price": 12,
-      "dimensions": "8x10 print \u00b7 300 dpi",
-      "image": "assets/img/products/roddy_raccoon_puzzle.jpg",
-      "accepts": [
-        "paypal",
-        "cashapp",
-        "venmo"
-      ],
-      "category": "puzzle"
-    },
-    {
-      "id": "sweet-tea-fair-city",
-      "owner": "sean",
       "title": "Sweet Tea Fair City",
       "price": 12,
       "dimensions": "8x10 print \u00b7 300 dpi",
       "image": "assets/img/products/Sweet_tea_fair_city.jpg",
-      "accepts": [
-        "paypal",
-        "cashapp",
-        "venmo"
-      ],
-      "category": "puzzle"
+      "owner": "sean",
+      "type": "puzzle"
     },
     {
-      "id": "sweet-tea-laundry",
-      "owner": "sean",
       "title": "Sweet Tea Laundry",
       "price": 12,
       "dimensions": "8x10 print \u00b7 300 dpi",
       "image": "assets/img/products/sweet_tea_laundry.jpg",
-      "accepts": [
-        "paypal",
-        "cashapp",
-        "venmo"
-      ],
-      "category": "puzzle"
+      "owner": "sean",
+      "type": "puzzle"
     },
     {
-      "id": "swing-scene",
-      "owner": "sean",
       "title": "Swing Scene",
       "price": 12,
       "dimensions": "8x10 print \u00b7 300 dpi",
       "image": "assets/img/products/swing_scene.jpg",
-      "accepts": [
-        "paypal",
-        "cashapp",
-        "venmo"
-      ],
-      "category": "puzzle"
+      "owner": "sean",
+      "type": "puzzle"
+    },
+    {
+      "title": "Porch Egret Night",
+      "price": 12,
+      "dimensions": "8x10 print \u00b7 300 dpi",
+      "image": "assets/img/products/porch_egret_night.jpg",
+      "owner": "sean",
+      "type": "puzzle"
+    },
+    {
+      "title": "Roddy Raccoon Puzzle",
+      "price": 12,
+      "dimensions": "8x10 print \u00b7 300 dpi",
+      "image": "assets/img/products/roddy_raccoon_puzzle.jpg",
+      "owner": "sean",
+      "type": "puzzle"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "site_name": "Wonder Piece Studio",
   "version": "0.5.1",
   "commission": {
-    "default_percent": 0,
+    "default_percent": 0.51,
     "note": "Percent the studio retains when 'pay_here' flow is used"
   },
   "artists": {
@@ -27,11 +27,11 @@
     "founder": {
       "name": "Sean Watkins",
       "email": "seanpwatkins@gmail.com",
-      "role": "Founder \u2022 Puzzles & Crochet"
+      "role": "Founder \u2014 Puzzles & Crochet"
     },
     "it": {
       "name": "Dewayne Cox",
-      "email": "dewaynecox123456@gmail.com",
+      "email": "dewaynecox1234560@gmail.com",
       "role": "IT & Site Maintainer"
     }
   },
