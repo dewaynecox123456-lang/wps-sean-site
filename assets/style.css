@@ -35,3 +35,14 @@
 .container h1::after,.container h2::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:64px;background:linear-gradient(90deg,#79d492,#2a6a3b);border-radius:999px;box-shadow:0 2px 10px rgba(121,212,146,.35)}
 a:focus-visible,button:focus-visible{outline:2px solid #93c572;outline-offset:2px}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
+/* Footer badge layout */
+.site-footer .badges {
+  display: flex;
+  gap: 10px;         /* space between items */
+  align-items: center;
+  flex-wrap: wrap;   /* so it wraps nicely on small screens */
+}
+
+.site-footer .badges img {
+  height: 20px;      /* keep Netlify badge aligned with text badges */
+}
