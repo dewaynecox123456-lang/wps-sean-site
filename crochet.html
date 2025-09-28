@@ -1,15 +1,35 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Wonder Piece Studio — Crochet</title><link rel="stylesheet" href="assets/style.css"/></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Wonder Piece Studio — Crochet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/style.css" rel="stylesheet">
+</head>
 <body>
-<nav class="nav"><div class="wrap">
-  <a class="brand" href="/">Wonder Piece Studio</a>
-  <div class="links">
-    <a href="/">Puzzles</a><a href="art.html">Art Exhibit</a>
-    <a href="crochet.html">Crochet</a><a href="contact.html">Contact</a><a href="tip.html">Tip</a>
-  </div>
-</div></nav>
-<main class="container"><section class="hero"><h1>Crochet</h1><p>Coming soon.</p></section></main>
+<header>
+  <nav><ul>
+    <li><a href="index.html">Puzzles</a></li>
+    <li><a href="art.html">Art Exhibit</a></li>
+    <li><a href="crochet.html">Crochet</a></li>
+    <li><a href="tip.html">Tip</a></li>
+  </ul></nav>
+</header>
+<main>
+  <section>
+    <h2>Crochet</h2>
+    <div class="product-grid" id="mount-crochet"></div>
+  </section>
+</main>
+<footer>© 2025 Wonder Piece Studio. All Rights Reserved.</footer>
 <script src="assets/app.js"></script>
-</body></html>
+<script>
+  renderGallery({
+    folder: "crochet",
+    mountId: "mount-crochet",
+    section: "crochet",
+    defaultPrice: "$18.00"
+  });
+</script>
+</body>
+</html>
